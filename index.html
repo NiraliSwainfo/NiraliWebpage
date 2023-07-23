@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div class="container1">
+    <section>
+    <div class="container1">
+    <img src="ic_googele.png" alt="Sign in with Google"/>
+    <p>Sign In with Google</p>
+   
+    </div>
+</section>
+<hr style="border-color: rgb(222, 219, 219); border-width: 1px;">
+<div class="head">
+    <img src="ic_launcher_round.png" alt="Super Mail"/>
+</div>
+<div class="title">
+    <p><b>Super Mail</b> wants access to your Google Account</p>
+    
+</div>
+<div>
+    <label>
+        <input type="checkbox"id="checkbox1" name="agree" value="yes">
+        Super Mail asks Read all resources and their metadata Permission.
+    </label>
+    <label>
+        <input type="checkbox" id="checkbox2" name="agree" value="yes">
+        Read, compose, and send emails from your Gmail account.
+    </label>
+    <label>
+        <input type="checkbox" id="checkbox3" name="agree" value="yes">
+        <b>Make sure you trust Super Mail</b>  app requires access to your Gmail account to provide email functionality. By granting access, the app will be able to read, send, and manage your email messages. This allows you to send and receive emails, search your inbox, and organize your messages effectively. Rest assured that your personal information will be handled securely and in accordance with our privacy policy. Please review the permissions carefully before proceeding.
+    </label>
+    <span class="checkbox-container">
+        <input type="checkbox" id="checkbox4" name="agree" value="yes">
+        <a href="https://www.privacypolicycenter.com/view.php?v=NjVqbnNJMDN1L3pURkIzR0RNZ3ZnUT09&amp;n=SuperMail"><b>Clicking on Allow button</b> , you are agree to the <span class="privacy-policy">Privacy Policy </span>
+            of app</a>
+        <br>
+        </span>
+    <hr>
+ 
+    <div class="buttons-container">
+        <button class="button">Cancel</button>
+        <button id="allowButton">Allow</button>
+    </div>
+   
+</div>
+
+
+<script>
+   // Function to handle login (replace this with your own login logic)
+        function handleLogin() {
+            const checkbox1 = document.getElementById('checkbox1');
+            const checkbox2 = document.getElementById('checkbox2');
+            const checkbox3 = document.getElementById('checkbox3');
+            const checkbox4 = document.getElementById('checkbox4');
+            // Add more checkboxes as needed
+
+            // Check if all checkboxes are selected
+            if (checkbox1.checked && checkbox2.checked && checkbox3.checked && checkbox4.checked) {
+
+              
+                    // Handle login failure (display an error message, etc.)
+                    window.location.href = "login.html"; 
+                
+            } else {
+                // Handle the case when not all checkboxes are selected
+                alert("Please select all checkboxes before clicking Allow.");
+            }
+        }
+
+        // Add an event listener to the "Allow" button
+        const allowButton = document.getElementById('allowButton');
+        allowButton.addEventListener('click', handleLogin);
+</script>
+</body>
+</html>

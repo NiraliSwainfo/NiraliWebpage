@@ -1,0 +1,136 @@
+
+
+body {
+    margin: 0 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: 2px solid #ccc; /* Optional: Add a border to show the rounded corners */
+    padding: 10px;
+}
+
+.container {
+    display: inline; /* or use 'inline' if you prefer */
+}
+
+img {
+    width: 45px;
+    vertical-align: middle; /* To align the image properly with the text */
+}
+section {
+    margin: 20px 20px;
+    display: flex; /* Use flexbox to create a flexible container */
+    align-items: center; /* Align items vertically in the center */
+}
+p {
+    margin: 10px;
+    display: inline; 
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(72, 70, 70);
+}
+.title
+{
+    margin-top: 30px;
+    display: inline-block;
+}
+label
+{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    display: inline-block;
+    text-align: left;
+         
+}
+.checkbox-container {
+   
+    flex: 0 0 auto; /* Don't allow the checkbox to grow or shrink */
+    margin-left: 5px; /* Add some space between the label content and the checkbox */
+}
+input[type="checkbox"] {
+    
+    display: inline-block; /* Set the checkbox to display as inline-block */
+    vertical-align: middle; /* Align the checkbox vertically with the text */
+    margin-right: 5px; /* Add some space between the checkbox and the text */
+}
+b {
+    display: inline; /* Set the <b> element to display as inline */
+    font-weight: bold; /* Add bold style */
+}
+
+.head {
+    display: block; /* Set the container to display as block */
+    margin: 0 auto; /* Use margin auto to center the container horizontally */
+}
+
+.head img {
+    display: block; /* Make the image a block element to center it */
+    margin: 0 auto; /* Use margin auto to center the image horizontally */
+}
+
+.title p{
+    font-size: 15px;
+}
+
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Add some margin between the buttons and the label */
+}
+
+.button,#allowButton {
+    padding: 8px 16px;
+    background-color: transparent;
+    color: #3246c7;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+a{
+    font-size: 13px;
+    color: rgb(17, 17, 21);
+    text-decoration: none;
+    
+}
+.privacy-policy {
+    color: blue;
+    text-decoration: underline; /* Add underline to the "Privacy Policy" text */
+}
+.container {
+    border: 2px solid #ccc; /* Add a border to the container */
+    border-radius: 10px; /* Apply rounded corners */
+    padding: 20px; /* Add padding to create space between the border and content */
+    width: 100%; /* Set the width to fill the available space */
+    background-color: #f9f9f9; /* Add a background color */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h1,
+h2 {
+    font-family: 'Bebas Neue', cursive;
+}
+
+
+
+
+
+
+
