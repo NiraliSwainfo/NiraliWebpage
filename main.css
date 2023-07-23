@@ -14,7 +14,7 @@ body {
 }
 
 img {
-    width: 45px;
+    width: 200px;
     vertical-align: middle; /* To align the image properly with the text */
 }
 section {
@@ -64,6 +64,7 @@ b {
 }
 
 .head img {
+    width: 45px;
     display: block; /* Make the image a block element to center it */
     margin: 0 auto; /* Use margin auto to center the image horizontally */
 }
