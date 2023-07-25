@@ -85,32 +85,36 @@
 
         
 </script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<script>
-    function onSignIn() {
-      gapi.load('auth2', function() {
-        gapi.auth2.init({
-          client_id: '390762603984-gp4c3a382lflgg6h58kqp2vfdrbguvqc.apps.googleusercontent.com',
-          scope:  'email profile https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/gmail.modify'
-        }).then(function(auth2) {
-          if (!auth2.isSignedIn.get()) {
-            auth2.signIn().then(function(googleUser) {
-              // Handle the signed-in user data here
-              var profile = googleUser.getBasicProfile();
-              console.log('ID: ' + profile.getId());
-              console.log('Full Name: ' + profile.getName());
-              console.log('Given Name: ' + profile.getGivenName());
-              console.log('Family Name: ' + profile.getFamilyName());
-              console.log('Email: ' + profile.getEmail());
-              // You can access more user information based on the scope permissions
-            });
-          }
-        });
+
+<script src="https://accounts.google.com/gsi/client" async defer ></script>
+    <script>
+      window.onGoogleLibraryLoad = () => {
+      google.accounts.id.initialize({
+        client_id:'390762603984-gp4c3a382lflgg6h58kqp2vfdrbguvqc.apps.googleusercontent.com',
+        cancel_on_tap_outside: false,
+        //callback: onOneTapSignedIn,
+        prompt_parent_id: "root",
+        //intermediate_iframe_close_callback : close_callback1
+      });
+      google.accounts.id.prompt((notification) => {
+        if (notification.isNotDisplayed()) {
+          console.log(notification.getNotDisplayedReason());
+        } else if (notification.isSkippedMoment()) {
+          console.log(notification.getSkippedReason());
+        } else if (notification.isDismissedMoment()) {
+          console.log(notification.getDismissedReason());
+        } else {
+          
+        }
       });
     }
+            // Attach the click event listener to the button
+            //document.getElementById('btn').addEventListener('click', handleCredentialResponse);
+    </script>
 
-    // Attach the click event listener to the button
-    document.getElementById('btn').addEventListener('click', onSignIn);
-  </script>
+
+
+  
+ 
 </body>
 </html>
