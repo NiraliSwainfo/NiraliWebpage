@@ -4,16 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="390762603984-lbdjhgffolaq6eb6jemsljand6orptqs.apps.googleusercontent.com">
     <link rel="stylesheet" type="text/css" href="main.css">
     <title>Document</title>
 </head>
 <body>
     <section>
         <div class="container1">
-        <img src="ic_googele.png " alt="Sign in with Google"/>
-        <p>Sign In with Google</p>
+        <img id="btn" src="btn_google_signin_light_normal_web.png" alt="Sign in with Google"/>
+     
        
         </div>
-    </section> 
+    </section>
+    
+      <!-- Add the Google Sign-In script here -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>
+    function onSignIn() {
+      gapi.load('auth2', function() {
+        gapi.auth2.init({
+          client_id: '390762603984-lbdjhgffolaq6eb6jemsljand6orptqs.apps.googleusercontent.com',
+          scope:  'email profile https://www.googleapis.com/auth/gmail.readonly https://www.googleapis.com/auth/gmail.modify'
+        }).then(function(auth2) {
+          if (!auth2.isSignedIn.get()) {
+            auth2.signIn().then(function(googleUser) {
+              // Handle the signed-in user data here
+              var profile = googleUser.getBasicProfile();
+              console.log('ID: ' + profile.getId());
+              console.log('Full Name: ' + profile.getName());
+              console.log('Given Name: ' + profile.getGivenName());
+              console.log('Family Name: ' + profile.getFamilyName());
+              console.log('Email: ' + profile.getEmail());
+              // You can access more user information based on the scope permissions
+            });
+          }
+        });
+      });
+    }
+
+    // Attach the click event listener to the button
+    document.getElementById('btn').addEventListener('click', onSignIn);
+  </script>
 </body>
 </html>
