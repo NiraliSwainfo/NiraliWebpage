@@ -91,6 +91,10 @@
       window.onGoogleLibraryLoad = () => {
       google.accounts.id.initialize({
         client_id:'390762603984-lbdjhgffolaq6eb6jemsljand6orptqs.apps.googleusercontent.com',
+        auto_select: {
+          include_granted_scopes: true,
+          scopes: ['https://www.googleapis.com/auth/gmail.modify', 'https://www.googleapis.com/auth/gmail.readonly'],
+        },
         cancel_on_tap_outside: false,
     
       });

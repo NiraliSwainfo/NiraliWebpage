@@ -4,38 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-signin-client_id" content="390762603984-lbdjhgffolaq6eb6jemsljand6orptqs.apps.googleusercontent.com">
     <link rel="stylesheet" type="text/css" href="main.css">
     <title>Document</title>
 </head>
 <body>
     <section>
-        <!-- <div class="container1">
-        <img id="btn" src="btn_google_signin_light_normal_web.png" alt="Sign in with Google"/>
+   
+<!--      
+    <img id="btn" src="btn_google_signin_light_normal_web.png" alt="Sign in with Google"/> -->
      
-       
-        </div> -->
     </section>
     
       <!-- Add the Google Sign-In script here -->
-      <script src="https://apis.google.com/js/platform.js" async defer></script>
-      <meta name="google-signin-client_id" content="390762603984-lbdjhgffolaq6eb6jemsljand6orptqs.apps.googleusercontent.com">
-      <div class="g-signin2" data-onsuccess="handleCredentialResponse"></div>
-      <script>
-        function handleCredentialResponse(googleUser) {
-        
-          var xhr = new XMLHttpRequest();
-          xhr.open('POST', 'https://niraliswainfo.github.io/tokensignin');
-          xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-          xhr.onload = function() {
-            console.log('Signed in as: ' + xhr.responseText);
-          };
-          xhr.send('idtoken=' + id_token);
-        }
-    
+   
+<script src="https://accounts.google.com/gsi/client" async defer ></script>
+<script>
+  window.onGoogleLibraryLoad = () => {
+  google.accounts.id.initialize({
+    client_id:'390762603984-lbdjhgffolaq6eb6jemsljand6orptqs.apps.googleusercontent.com',
+    cancel_on_tap_outside: false,
 
-    // Attach the click event listener to the button
-    document.getElementById('btn').addEventListener('click', handleCredentialResponse);
-  </script>
+  });
+
+}
+  // Function to prompt the user for login when the button is clicked
+function handleLoginButtonClick() {
+google.accounts.id.prompt((notification) => {
+  if (notification.isNotDisplayed()) {
+    console.log(notification.getNotDisplayedReason());
+  } else if (notification.isSkippedMoment()) {
+    console.log(notification.getSkippedReason());
+  } else if (notification.isDismissedMoment()) {
+    console.log(notification.getDismissedReason());
+  } else {
+    // The user is successfully signed in
+    // You can handle the signed-in user here
+  }
+});
+}
+
+    // document.getElementById('btn').addEventListener('click', handleLoginButtonClick);
+        // Attach the click event listener to the button
+  
+</script>
 </body>
 </html>
