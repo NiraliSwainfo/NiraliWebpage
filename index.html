@@ -90,26 +90,31 @@
     <script>
       window.onGoogleLibraryLoad = () => {
       google.accounts.id.initialize({
-        client_id:'390762603984-gp4c3a382lflgg6h58kqp2vfdrbguvqc.apps.googleusercontent.com',
+        client_id:'390762603984-lbdjhgffolaq6eb6jemsljand6orptqs.apps.googleusercontent.com',
         cancel_on_tap_outside: false,
-        //callback: onOneTapSignedIn,
-        prompt_parent_id: "root",
-        //intermediate_iframe_close_callback : close_callback1
+    
       });
-      google.accounts.id.prompt((notification) => {
-        if (notification.isNotDisplayed()) {
-          console.log(notification.getNotDisplayedReason());
-        } else if (notification.isSkippedMoment()) {
-          console.log(notification.getSkippedReason());
-        } else if (notification.isDismissedMoment()) {
-          console.log(notification.getDismissedReason());
-        } else {
-          
-        }
-      });
+   
     }
+      // Function to prompt the user for login when the button is clicked
+  function handleLoginButtonClick() {
+    google.accounts.id.prompt((notification) => {
+      if (notification.isNotDisplayed()) {
+        console.log(notification.getNotDisplayedReason());
+      } else if (notification.isSkippedMoment()) {
+        console.log(notification.getSkippedReason());
+      } else if (notification.isDismissedMoment()) {
+        console.log(notification.getDismissedReason());
+      } else {
+        // The user is successfully signed in
+        // You can handle the signed-in user here
+      }
+    });
+  }
+
+        document.getElementById('btn').addEventListener('click', handleLoginButtonClick);
             // Attach the click event listener to the button
-            //document.getElementById('btn').addEventListener('click', handleCredentialResponse);
+      
     </script>
 
 
